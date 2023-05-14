@@ -1,0 +1,28 @@
+Because it makes them better hunters, scalloped hammerhead sharks (Sphyrna lewini) have evolved a unique method to avoid losing body heat when they dive for prey in deep, cold waters: they close their gills.
+
+Numerous fish and marine-mammal species are known to dive from the warm surface to deeper waters to hunt. However, ectothermic, or ‘cold-blooded’, animals face the challenge of how to conserve their body temperature to keep their metabolism active enough for hunting when the surrounding water can be just a few degrees above freezing.
+
+“The most rapid point of heat loss for any fish, even a high-performance fish, is always at the gills,” says Mark Royer, a postdoctoral researcher in shark physiology and behaviour at the Hawaiʻi Institute of Marine Biology in Kaneohe, part of the University of Hawaiʻi. Because of the high volume of warm blood flowing through the gills, they are “essentially just giant radiators strapped to your head”, he says.
+
+Some fish, such as the whale shark (Rhincodon typus), are able to conserve their body heat when diving through sheer size. Others, such as tuna, marlin and the family that includes great white (Carcharodon carcharias) and mako sharks (Isurus oxyrinchus), have evolved specialized heat-exchange systems at the gills that avoid too much body heat being lost.
+
+The scalloped hammerhead has neither of these advantages or adaptations, yet has been tracked doing rapid, repeated dives to depths of around 800 metres.
+
+To understand how sharks were coping with the temperature changes, Royer and his colleagues developed a device consisting of instruments that measured depth, water temperature, location and movement, as well as a probe embedded into muscles near the dorsal fin that recorded the shark’s core temperature. The device was designed to break off after several weeks, float to the surface and send out a signal to enable its recovery.
+
+Three scalloped hammerhead sharks captured off the Hawaiian coast were tagged with the device.
+
+In a paper published in Science1, the team reported that the sharks would dive several times — six in an evening, for one shark — into deep water at temperatures of 5–11 °C, around 20 °C colder than at the surface, and remain there for 5–7 minutes at a time before surfacing.
+
+Body temperature remained constant for most of the dive until the final stage of their ascent back to warmer waters, when it would decline rapidly.
+Keeping warm
+
+Royer suggests that the sharks are keeping their core temperature stable by simply not opening their gills or mouth during the dive; effectively ‘holding their breath’. “If you don’t have water going over your gills, then you won’t be dumping your body heat into the environment,” he says.
+
+The drop in body temperature near the surface coincides with the sharks’ steep ascent flattening out slightly, which Royer suggests is the moment they start to allow water to flow over the gills. “They can slow themselves down, open their gills and start breathing again [because] the water that they’re in, it’s not as cold as it is at the bottom,” he says.
+
+To shut down oxygen intake in this way suggests that the scalloped hammerhead must be able to deal with plummeting blood-oxygen levels during dives, says Mark Meekan, a fish ecologist at the University of Western Australia Oceans Institute in Perth, although the mechanism is yet to be discovered. “What they could be doing is slowing the heart muscle, slowing the pumping of blood around the body,” Meekan says. The shark’s tissues and blood could have evolved to hold more oxygen per unit of volume — akin to the adaptation seen in people who live at altitude — or might be able to deal with the molecular by-products of anaerobic respiration, which can be toxic at high levels.
+
+Marine biologist Colin Simpfendorfer at James Cook University in Townsville, Australia, says the study shows how sharks are well adapted to the limits of their environment. “Diving to over 1,000 metres from tropical temperatures at the surface down to just a couple of degrees centigrade to feed is a fairly extreme movement to do on a regular basis,” Simpfendorfer says.
+
+So far, scalloped hammerheads are the first fish found to do this, but Simpfendorfer says other sharks and fish might have the same adaptation. “There is a big advantage in being able to hunt when you’re warm and everything else is cold.”
