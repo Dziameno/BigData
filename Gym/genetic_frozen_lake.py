@@ -2,40 +2,43 @@ import gymnasium as gym
 import pygame
 import numpy as np
 from gym.envs.toy_text.frozen_lake import generate_random_map
-import pygame.locals as pylocals
 import os.path
 
-population_size = 500
+population_size = 2000
 generations = 500
-elite_size = 5
-mutation_rate = 0.05
+elite_size = 50
+mutation_rate = 0.2
+
+MAP = { '8x8': ["SFFFFFFF"],}
 
 # random_size = np.random.randint(5, 7)
-random_size = 5
 # random_floes = np.random.random()
-random_floes = 0.1
-random_map = generate_random_map(size=random_size, p=random_floes)
+#random_map = generate_random_map(size=random_size, p=random_floes)
 
-env = gym.make("FrozenLake-v1", desc=random_map, is_slippery=False)
-# env = gym.make("FrozenLake-v1", desc=random_map, is_slippery=False, render_mode="human")
+env = gym.make("FrozenLake-v1", map_name='8x8', is_slippery=False)
+#env = gym.make("FrozenLake-v1", map_name='8x8', is_slippery=False, render_mode="human")
 
 
 def evaluate_fitness(individual):
     fitness = 0
+    success_count = 0
+    failure_count = 0
     env.reset()
     for action in individual:
         location, reward, isDead, info, terminated = env.step(action)
 
-        if isDead:
-            fitness -= 1
+        if reward == 1:
+            fitness += 25
+            success_count += 1
             env.reset()
-        elif reward == 1:
-            fitness += 15
+        if isDead == True:
+            failure_count += 1
+            env.reset()
             break
         else:
-            fitness += 0
+            fitness -= 1
 
-    return fitness
+    return fitness, success_count, failure_count
 
 
 def initialize_population():
@@ -78,6 +81,10 @@ def load_best_individual():
     return np.load("best_individual.npy")
 
 
+def save_best_individual(individual):
+    np.save("best_individual.npy", individual)
+
+
 def main():
     pygame.init()
 
@@ -87,22 +94,39 @@ def main():
         population = initialize_population()
 
     best_fitness_overall = -float('inf')
+    best_individual_overall = None
+    best_generation_overall = -1
+    total_success_count = 0
+    total_failure_count = 0
 
     for generation in range(generations):
         fitness_scores = []
+        generation_success_count = 0
+        generation_failure_count = 0
         for individual in population:
-            fitness_scores.append(evaluate_fitness(individual))
+            fitness, success_count, failure_count = evaluate_fitness(individual)
+            fitness_scores.append(fitness)
+            generation_success_count += success_count
+            generation_failure_count += failure_count
 
-        best_fitness = max(fitness_scores)
-        if best_fitness > best_fitness_overall:
-            best_fitness_overall = best_fitness
+        current_best_fitness = max(fitness_scores)
+        if current_best_fitness > best_fitness_overall:
+            best_fitness_overall = current_best_fitness
+            best_individual_overall = population[np.argmax(fitness_scores)]
+            best_generation_overall = generation + 1
 
-        best_individual = population[np.argmax(fitness_scores)]
         population = evolve(population)
-        print("Generation:", generation + 1, "Highest fitness:", best_fitness)
+        print("Gen:", generation + 1, "Highest fitness:", current_best_fitness,
+              "Acc: {:.2f}%".format((generation_success_count / (generation_success_count + generation_failure_count)) * 100))
+
+        total_success_count += generation_success_count
+        total_failure_count += generation_failure_count
 
     print("Best fitness overall:", best_fitness_overall)
-    save_best_individual(best_individual)
+    print("Best generation overall:", best_generation_overall)
+    print("Accuracy of all generations: {:.2f}%".format((total_success_count / (total_success_count + total_failure_count))*100))
+    save_best_individual(best_individual_overall)
+
 
 if __name__ == "__main__":
     main()
